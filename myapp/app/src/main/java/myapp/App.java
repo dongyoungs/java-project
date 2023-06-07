@@ -6,6 +6,7 @@ package myapp;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.HashMap;
 
 public class App {
 
@@ -14,8 +15,23 @@ public class App {
   static int mainMenuNum = 0;
   static int subMenuNum = 0;
   static ArrayList<product> productList = new ArrayList<product>();
+  static HashMap<Integer, String> mainMenuMap = new HashMap<Integer, String>();
+  static HashMap<String, Map<Integer, String>> subMenuMap = new HashMap<String, Map<Integer, String>>();
+  static HashMap<Integer, String> foodMap1 = new HashMap<Integer, String>();
+  static HashMap<Integer, String> foodMap2 = new HashMap<Integer, String>();
+  static HashMap<Integer, String> foodMap3 = new HashMap<Integer, String>();
+  static HashMap<Integer, String> foodMap4 = new HashMap<Integer, String>();
+  static HashMap<Integer, String> foodMap5 = new HashMap<Integer, String>();
+  static HashMap<Integer, String> foodMap6 = new HashMap<Integer, String>();
+  static HashMap<Integer, String> foodMap7 = new HashMap<Integer, String>();
+  static HashMap<Integer, String> foodMap8 = new HashMap<Integer, String>();
+  static HashMap<Integer, String> foodMap9 = new HashMap<Integer, String>();
+  static HashMap<Integer, String> foodMap10 = new HashMap<Integer, String>();
+  static HashMap<Integer, String> foodMap11 = new HashMap<Integer, String>();
+  static HashMap<Integer, String> foodMap12 = new HashMap<Integer, String>();
 
   public static void main(String[] args) {
+    // 메뉴 데이터 초기화
     productList.add(new product("황금올리브치킨", 0, 20000));
     productList.add(new product("황올 반+양념 반", 0, 21000));
     productList.add(new product("황금올리브치킨 블랙페퍼", 0, 21000));
@@ -28,6 +44,48 @@ public class App {
     productList.add(new product("황올한팝콘 카라멜맛", 0, 1800));
     productList.add(new product("유자폰스소스", 0, 1500));
     productList.add(new product("스파클링 레몬보이 245ml", 0, 1000));
+
+    mainMenuMap.put(1, "후라이드");
+    mainMenuMap.put(2, "반반");
+    mainMenuMap.put(3, "시즈닝");
+    mainMenuMap.put(4, "양념");
+    mainMenuMap.put(5, "구이");
+    mainMenuMap.put(6, "황올 콤보시리즈");
+    mainMenuMap.put(7, "세트메뉴");
+    mainMenuMap.put(8, "1인분 메뉴");
+    mainMenuMap.put(9, "피자/버거");
+    mainMenuMap.put(10, "사이드메뉴");
+    mainMenuMap.put(11, "소스류");
+    mainMenuMap.put(12, "음료/주류");
+
+    // food 추가
+    foodMap1.put(1, "황금올리브치킨");
+    foodMap2.put(1, "황올 반+양념 반");
+    foodMap3.put(1, "황금올리브치킨 블랙페퍼");
+    foodMap4.put(1, "자메이카 소떡만나치킨");
+    foodMap5.put(1, "자메이카 통다리구이");
+    foodMap6.put(1, "황금올리브치킨 콤보");
+    foodMap7.put(1, "TOP3세트메뉴 Set1");
+    foodMap8.put(1, "황금올리브치킨 반마리");
+    foodMap9.put(1, "BBQ 치킨버거(마일드)");
+    foodMap10.put(1, "황올한팝콘 카라멜맛");
+    foodMap11.put(1, "유자폰스소스");
+    foodMap12.put(1, "스파클링 레몬보이 245ml");
+
+    // subMenuMap 추가
+    subMenuMap.put(mainMenuMap.get(1), foodMap1);
+    subMenuMap.put(mainMenuMap.get(2), foodMap2);
+    subMenuMap.put(mainMenuMap.get(3), foodMap3);
+    subMenuMap.put(mainMenuMap.get(4), foodMap4);
+    subMenuMap.put(mainMenuMap.get(5), foodMap5);
+    subMenuMap.put(mainMenuMap.get(6), foodMap6);
+    subMenuMap.put(mainMenuMap.get(7), foodMap7);
+    subMenuMap.put(mainMenuMap.get(8), foodMap8);
+    subMenuMap.put(mainMenuMap.get(9), foodMap9);
+    subMenuMap.put(mainMenuMap.get(10), foodMap10);
+    subMenuMap.put(mainMenuMap.get(11), foodMap11);
+    subMenuMap.put(mainMenuMap.get(12), foodMap12);
+
     System.out.println("hello");
     mainMenu: while (true) {
       mainMenuShow();
@@ -56,18 +114,9 @@ public class App {
     System.out.println("        치킨집 메뉴 선택 프로그램         ");
     System.out.println("----------------------------------------");
 
-    System.out.println("1. 후라이드");
-    System.out.println("2. 반반");
-    System.out.println("3. 시즈닝");
-    System.out.println("4. 양념");
-    System.out.println("5. 구이");
-    System.out.println("6. 황올 콤보시리즈");
-    System.out.println("7. 세트메뉴");
-    System.out.println("8. 1인분 메뉴");
-    System.out.println("9. 피자/버거");
-    System.out.println("10. 사이드메뉴");
-    System.out.println("11. 소스류");
-    System.out.println("12. 음료/주류");
+    for (int i = 1; i < 13; i++) {
+      System.out.printf("%d. %s\n", i, mainMenuMap.get(i));
+    }
     System.out.println("13. 직원호출 메뉴");
     System.out.println("14. 주문하기");
     System.out.println("0번은 프로그램 종료입니다.");
@@ -114,70 +163,20 @@ public class App {
   }
 
   static void selectFoodMenu(int num) {
-    switch (num) {
-      case 1: { // 후라이드메뉴
-        menuSelect("후라이드");
-        break;
-      }
-      case 2: { // 반반메뉴
-        menuSelect("반반");
-        break;
-      }
-      case 3: { // 시즈닝메뉴
-        menuSelect("시즈닝");
-        break;
-      }
-      case 4: { // 양념메뉴
-        menuSelect("양념");
-        break;
-      }
-      case 5: { // 구이메뉴
-        menuSelect("구이");
-        break;
-      }
-      case 6: { // 황올 콤보시리즈메뉴
-        menuSelect("황올 콤보시리즈");
-        break;
-      }
-      case 7: { // 세트메뉴메뉴
-        menuSelect("세트메뉴");
-        break;
-      }
-      case 8: { // 1인분 메뉴메뉴
-        menuSelect("1인분 메뉴");
-        break;
-      }
-      case 9: { // 피자/버거메뉴
-        menuSelect("피자/버거");
-        break;
-      }
-      case 10: { // 사이드메뉴
-        menuSelect("사이드메뉴");
-        break;
-      }
-      case 11: { // 소스류메뉴
-        menuSelect("소스류");
-        break;
-      }
-      case 12: { // 음료/주류메뉴
-        menuSelect("음료/주류");
-        break;
-      }
-    }
+
+    menuSelect(num);
   }
 
-  class menuInfo {
-  }
-
-  static void menuSelect(String menu) {
+  static void menuSelect(int mainMenuNum) {
+    String menu = mainMenuMap.get(mainMenuNum);
     while (true) {
       System.out.println("-----------------------------");
       System.out.println("        " + menu + "         ");
       System.out.println("-----------------------------");
-      detailMeneShow(menu);
+      detailMeneShow(mainMenuNum);
       input = prompt(">");
       subMenuNum = Integer.parseInt(input.replaceAll("[^0-9]", ""));
-      String menuName = setMenuName(menu, subMenuNum);
+      String menuName = setMenuName(mainMenuNum, subMenuNum);
       if (putInShoppingCart(menuName)) {
         break;
       } else {
@@ -186,8 +185,8 @@ public class App {
     }
   }
 
-  static void detailMeneShow(String menu) {
-    String detailMenuName = setMenuName(menu, 1);
+  static void detailMeneShow(int mainMenuNum) {
+    String detailMenuName = setMenuName(mainMenuNum, 1);
     for (int i = 0; i < productList.size(); i++) {
       product goods = productList.get(i);
       if (goods.menuName().equals(detailMenuName)) {
@@ -197,106 +196,8 @@ public class App {
     }
   }
 
-  static String setMenuName(String menu, int subMenuNum) {
-    switch (menu) {
-      case "후라이드": {
-        switch (subMenuNum) {
-          case 1:
-            return "황금올리브치킨";
-          default:
-            return "";
-        }
-      }
-      case "반반": {
-        switch (subMenuNum) {
-          case 1:
-            return "황올 반+양념 반";
-          default:
-            return "";
-        }
-      }
-      case "시즈닝": {
-        switch (subMenuNum) {
-          case 1:
-            return "황금올리브치킨 블랙페퍼";
-          default:
-            return "";
-        }
-      }
-      case "양념": {
-        switch (subMenuNum) {
-          case 1:
-            return "자메이카 소떡만나치킨";
-          default:
-            return "";
-        }
-      }
-      case "구이": {
-        switch (subMenuNum) {
-          case 1:
-            return "자메이카 통다리구이";
-          default:
-            return "";
-        }
-      }
-      case "황올 콤보시리즈": {
-        switch (subMenuNum) {
-          case 1:
-            return "황금올리브치킨 콤보";
-          default:
-            return "";
-        }
-      }
-      case "세트메뉴": {
-        switch (subMenuNum) {
-          case 1:
-            return "TOP3세트메뉴 Set1";
-          default:
-            return "";
-        }
-      }
-      case "1인분 메뉴": {
-        switch (subMenuNum) {
-          case 1:
-            return "황금올리브치킨 반마리";
-          default:
-            return "";
-        }
-      }
-      case "피자/버거": {
-        switch (subMenuNum) {
-          case 1:
-            return "BBQ 치킨버거(마일드)";
-          default:
-            return "";
-        }
-      }
-      case "사이드메뉴": {
-        switch (subMenuNum) {
-          case 1:
-            return "황올한팝콘 카라멜맛";
-          default:
-            return "";
-        }
-      }
-      case "소스류": {
-        switch (subMenuNum) {
-          case 1:
-            return "유자폰스소스";
-          default:
-            return "";
-        }
-      }
-      case "음료/주류": {
-        switch (subMenuNum) {
-          case 1:
-            return "스파클링 레몬보이 245ml";
-          default:
-            return "";
-        }
-      }
-    }
-    return "";
+  static String setMenuName(int mainMenuNum, int subMenuNum) {
+    return subMenuMap.get(mainMenuMap.get(mainMenuNum)).get(subMenuNum);
   }
 
   static boolean putInShoppingCart(String menu) {
