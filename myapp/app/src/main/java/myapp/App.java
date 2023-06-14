@@ -3,103 +3,34 @@
  */
 package myapp;
 
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.HashMap;
+import myapp.util.Prompt;
+import myapp.handler.MenuHandler;
 
 public class App {
 
-  static Scanner scanner = new Scanner(System.in);
   static String input = "";
-  static int mainMenuNum = 0;
-  static int subMenuNum = 0;
-  static ArrayList<product> productList = new ArrayList<product>();
-  static HashMap<Integer, String> mainMenuMap = new HashMap<Integer, String>();
-  static HashMap<String, Map<Integer, String>> subMenuMap = new HashMap<String, Map<Integer, String>>();
-  static HashMap<Integer, String> foodMap1 = new HashMap<Integer, String>();
-  static HashMap<Integer, String> foodMap2 = new HashMap<Integer, String>();
-  static HashMap<Integer, String> foodMap3 = new HashMap<Integer, String>();
-  static HashMap<Integer, String> foodMap4 = new HashMap<Integer, String>();
-  static HashMap<Integer, String> foodMap5 = new HashMap<Integer, String>();
-  static HashMap<Integer, String> foodMap6 = new HashMap<Integer, String>();
-  static HashMap<Integer, String> foodMap7 = new HashMap<Integer, String>();
-  static HashMap<Integer, String> foodMap8 = new HashMap<Integer, String>();
-  static HashMap<Integer, String> foodMap9 = new HashMap<Integer, String>();
-  static HashMap<Integer, String> foodMap10 = new HashMap<Integer, String>();
-  static HashMap<Integer, String> foodMap11 = new HashMap<Integer, String>();
-  static HashMap<Integer, String> foodMap12 = new HashMap<Integer, String>();
 
   public static void main(String[] args) {
-    // 메뉴 데이터 초기화
-    productList.add(new product("황금올리브치킨", 0, 20000));
-    productList.add(new product("황올 반+양념 반", 0, 21000));
-    productList.add(new product("황금올리브치킨 블랙페퍼", 0, 21000));
-    productList.add(new product("자메이카 소떡만나치킨", 0, 24000));
-    productList.add(new product("자메이카 통다리구이", 0, 21500));
-    productList.add(new product("황금올리브치킨 콤보", 0, 24000));
-    productList.add(new product("TOP3세트메뉴 Set1", 0, 26000));
-    productList.add(new product("황금올리브치킨 반마리", 0, 11000));
-    productList.add(new product("BBQ 치킨버거(마일드)", 0, 5000));
-    productList.add(new product("황올한팝콘 카라멜맛", 0, 1800));
-    productList.add(new product("유자폰스소스", 0, 1500));
-    productList.add(new product("스파클링 레몬보이 245ml", 0, 1000));
 
-    mainMenuMap.put(1, "후라이드");
-    mainMenuMap.put(2, "반반");
-    mainMenuMap.put(3, "시즈닝");
-    mainMenuMap.put(4, "양념");
-    mainMenuMap.put(5, "구이");
-    mainMenuMap.put(6, "황올 콤보시리즈");
-    mainMenuMap.put(7, "세트메뉴");
-    mainMenuMap.put(8, "1인분 메뉴");
-    mainMenuMap.put(9, "피자/버거");
-    mainMenuMap.put(10, "사이드메뉴");
-    mainMenuMap.put(11, "소스류");
-    mainMenuMap.put(12, "음료/주류");
+    Prompt prompt = new Prompt();
+    MenuHandler menuHandler = new MenuHandler(prompt);
 
-    // food 추가
-    foodMap1.put(1, "황금올리브치킨");
-    foodMap2.put(1, "황올 반+양념 반");
-    foodMap3.put(1, "황금올리브치킨 블랙페퍼");
-    foodMap4.put(1, "자메이카 소떡만나치킨");
-    foodMap5.put(1, "자메이카 통다리구이");
-    foodMap6.put(1, "황금올리브치킨 콤보");
-    foodMap7.put(1, "TOP3세트메뉴 Set1");
-    foodMap8.put(1, "황금올리브치킨 반마리");
-    foodMap9.put(1, "BBQ 치킨버거(마일드)");
-    foodMap10.put(1, "황올한팝콘 카라멜맛");
-    foodMap11.put(1, "유자폰스소스");
-    foodMap12.put(1, "스파클링 레몬보이 245ml");
-
-    // subMenuMap 추가
-    subMenuMap.put(mainMenuMap.get(1), foodMap1);
-    subMenuMap.put(mainMenuMap.get(2), foodMap2);
-    subMenuMap.put(mainMenuMap.get(3), foodMap3);
-    subMenuMap.put(mainMenuMap.get(4), foodMap4);
-    subMenuMap.put(mainMenuMap.get(5), foodMap5);
-    subMenuMap.put(mainMenuMap.get(6), foodMap6);
-    subMenuMap.put(mainMenuMap.get(7), foodMap7);
-    subMenuMap.put(mainMenuMap.get(8), foodMap8);
-    subMenuMap.put(mainMenuMap.get(9), foodMap9);
-    subMenuMap.put(mainMenuMap.get(10), foodMap10);
-    subMenuMap.put(mainMenuMap.get(11), foodMap11);
-    subMenuMap.put(mainMenuMap.get(12), foodMap12);
-
-    System.out.println("hello");
+    menuHandler.initData();
     mainMenu: while (true) {
-      mainMenuShow();
-      input = prompt(">");
-      mainMenuNum = Integer.parseInt(input.replaceAll("[^0-9]", ""));
-      System.out.println(mainMenuNum);
+      printTitle();
+      menuHandler.mainMenuShow();
+      input = prompt.inputString(">");
+      int mainMenuNum = Integer.parseInt(input.replaceAll("[^0-9]", ""));
       if (mainMenuNum > 0 && mainMenuNum < 13) {
-        selectFoodMenu(mainMenuNum);
+        menuHandler.menuSelectShow(mainMenuNum);
       } else if (mainMenuNum == 0) {
         break;
       } else if (mainMenuNum == 13) {
 
       } else if (mainMenuNum == 14) {
-        selectedMenuListShow();
+        menuHandler.editSelectedMenu();
+      } else if (mainMenuNum == 15) {
+        menuHandler.selectedMenuListShow();
       } else {
         System.out.println("잘못 입력하셧습니다 ");
         System.out.println("\n\n");
@@ -109,154 +40,9 @@ public class App {
     }
   }
 
-  static void mainMenuShow() {
+  static void printTitle() {
     System.out.println("----------------------------------------");
-    System.out.println("        치킨집 메뉴 선택 프로그램         ");
+    System.out.println("        BBQ 메뉴 선택 프로그램         ");
     System.out.println("----------------------------------------");
-
-    for (int i = 1; i < 13; i++) {
-      System.out.printf("%d. %s\n", i, mainMenuMap.get(i));
-    }
-    System.out.println("13. 직원호출 메뉴");
-    System.out.println("14. 주문하기");
-    System.out.println("0번은 프로그램 종료입니다.");
-  }
-
-  static String prompt(String str) {
-    System.out.print(str);
-    return scanner.nextLine();
-  }
-
-  static void selectedMenuListShow() {
-    int sum = 0;
-    System.out.println("----------------------------------------");
-    System.out.println("주문내역");
-    System.out.println("----------------------------------------");
-    for (int i = 0; i < productList.size(); i++) {
-      product goods = productList.get(i);
-      if (goods.menuNum() > 0) {
-        System.out.println(goods.menuName() + "  수량 : " + goods.menuNum() + "  주문 가격 : " + goods.totalPrice());
-        sum += goods.totalPrice();
-      }
-    }
-    System.out.println("총 주문가격 : " + sum + "원입니다.");
-    input = prompt("주문하시겠습니까? (Y/n)\n");
-    if (input.equals("") || input.equalsIgnoreCase("Y")) {
-      for (int i = 0; i < productList.size(); i++) {
-        product goods = productList.get(i);
-        goods.init();
-      }
-      System.out.println("주문이 완료되었습니다.");
-      System.out.println("\n\n");
-      try {
-        Thread.sleep(1500);
-      } catch (InterruptedException e) {
-        System.out.println("error");
-      }
-    } else if (input.equalsIgnoreCase("n")) {
-      System.out.println("메인메뉴로 돌아갑니다.");
-    } else {
-      System.out.println("잘못입력하셧습니다");
-      System.out.println("\n\n");
-      selectedMenuListShow();
-    }
-  }
-
-  static void selectFoodMenu(int num) {
-
-    menuSelect(num);
-  }
-
-  static void menuSelect(int mainMenuNum) {
-    String menu = mainMenuMap.get(mainMenuNum);
-    while (true) {
-      System.out.println("-----------------------------");
-      System.out.println("        " + menu + "         ");
-      System.out.println("-----------------------------");
-      detailMeneShow(mainMenuNum);
-      input = prompt(">");
-      subMenuNum = Integer.parseInt(input.replaceAll("[^0-9]", ""));
-      String menuName = setMenuName(mainMenuNum, subMenuNum);
-      if (putInShoppingCart(menuName)) {
-        break;
-      } else {
-        continue;
-      }
-    }
-  }
-
-  static void detailMeneShow(int mainMenuNum) {
-    String detailMenuName = setMenuName(mainMenuNum, 1);
-    for (int i = 0; i < productList.size(); i++) {
-      product goods = productList.get(i);
-      if (goods.menuName().equals(detailMenuName)) {
-        int num = 1;
-        System.out.printf("%d. %s - %d\n", num, goods.menuName(), goods.showPrice());
-      }
-    }
-  }
-
-  static String setMenuName(int mainMenuNum, int subMenuNum) {
-    return subMenuMap.get(mainMenuMap.get(mainMenuNum)).get(subMenuNum);
-  }
-
-  static boolean putInShoppingCart(String menu) {
-    input = prompt("선택하신 메뉴를 장바구니에 담으시겠습니까? (Y/n)\n");
-    if (input.equals("") || input.equalsIgnoreCase("Y")) {
-      input = prompt("갯수를 설정해주세요\n>");
-      subMenuNum = Integer.parseInt(input.replaceAll("[^0-9]", ""));
-      for (int i = 0; i < productList.size(); i++) {
-        if (productList.get(i).menuName().equals(menu)) {
-          productList.get(i).addMenu(subMenuNum);
-        }
-      }
-      System.out.println("선택하신 메뉴를 장바구니에 담았습니다.");
-      System.out.println("메인메뉴로 돌아갑니다");
-      System.out.println("\n\n");
-      return true;
-
-    } else if (input.equalsIgnoreCase("n")) {
-      return false;
-    } else {
-      System.out.println("잘못 입력하셧습니다.");
-      System.out.println("\n\n");
-      return false;
-    }
-  }
-}
-
-class product {
-  String name;
-  int size;
-  int price;
-
-  product(String str, int num, int menuPrice) {
-    name = str;
-    size = num;
-    price = menuPrice;
-  }
-
-  public int totalPrice() {
-    return price * size;
-  }
-
-  public int showPrice() {
-    return price;
-  }
-
-  public void init() {
-    size = 0;
-  }
-
-  public String menuName() {
-    return name;
-  }
-
-  public int menuNum() {
-    return size;
-  }
-
-  public void addMenu(int a) {
-    size += a;
   }
 }
