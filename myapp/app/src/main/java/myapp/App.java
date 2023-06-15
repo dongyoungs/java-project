@@ -4,7 +4,7 @@
 package myapp;
 
 import myapp.util.Prompt;
-import myapp.handler.MenuHandler;
+import myapp.handler.BBQMenuHandler;
 
 public class App {
 
@@ -13,9 +13,8 @@ public class App {
   public static void main(String[] args) {
 
     Prompt prompt = new Prompt();
-    MenuHandler menuHandler = new MenuHandler(prompt);
+    BBQMenuHandler menuHandler = new BBQMenuHandler(prompt);
 
-    menuHandler.initData();
     mainMenu: while (true) {
       printTitle();
       menuHandler.mainMenuShow();
@@ -30,7 +29,7 @@ public class App {
       } else if (mainMenuNum == 14) {
         menuHandler.editSelectedMenu();
       } else if (mainMenuNum == 15) {
-        menuHandler.selectedMenuListShow();
+        menuHandler.orderedMenuListShow();
       } else {
         System.out.println("잘못 입력하셧습니다 ");
         System.out.println("\n\n");
