@@ -5,21 +5,34 @@ package myapp;
 
 import myapp.util.Prompt;
 import myapp.handler.BBQMenuHandler;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import myapp.vo.BBQProduct;
+import myapp.handler.BBQMenuList;
 
 public class App {
 
-  static String input = "";
+  BBQMenuList list = new BBQMenuList();
+
+  public App() {
+    // prepareMenu();
+  }
 
   public static void main(String[] args) {
+    // loadData();
+    new App().execute();
+    // saveData();
+  }
 
+  public void execute() {
     Prompt prompt = new Prompt();
-    BBQMenuHandler menuHandler = new BBQMenuHandler(prompt);
+    BBQMenuHandler menuHandler = new BBQMenuHandler(prompt, list);
 
     mainMenu: while (true) {
       printTitle();
       menuHandler.mainMenuShow();
-      input = prompt.inputString(">");
-      int mainMenuNum = Integer.parseInt(input.replaceAll("[^0-9]", ""));
+      int mainMenuNum = Integer.parseInt(prompt.inputString(">").replaceAll("[^0-9]", ""));
       if (mainMenuNum > 0 && mainMenuNum < 13) {
         menuHandler.menuSelectShow(mainMenuNum);
       } else if (mainMenuNum == 0) {
@@ -37,6 +50,14 @@ public class App {
       }
 
     }
+  }
+
+  private void loadData() {
+
+  }
+
+  private void saveData() {
+
   }
 
   static void printTitle() {

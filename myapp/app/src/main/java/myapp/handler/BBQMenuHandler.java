@@ -1,20 +1,19 @@
 package myapp.handler;
 
 import java.util.ArrayList;
-import java.util.Map;
-import java.util.HashMap;
 import myapp.util.Prompt;
-import myapp.vo.product;
+import myapp.vo.BBQProduct;
 
 public class BBQMenuHandler {
 
   static String input = "";
   static int subMenuNum = 0;
   private Prompt prompt;
-  private BBQMenuList list = new BBQMenuList();
+  private BBQMenuList list;
 
-  public BBQMenuHandler(Prompt prompt) {
+  public BBQMenuHandler(Prompt prompt, BBQMenuList list) {
     this.prompt = prompt;
+    this.list = list;
 
   }
 
@@ -27,6 +26,7 @@ public class BBQMenuHandler {
       System.out.println("메인메뉴로 돌아갑니다");
       System.out.println("\n\n");
       stopping(1500);
+
       return true;
 
     } else if (input.equalsIgnoreCase("n")) {
@@ -40,9 +40,9 @@ public class BBQMenuHandler {
   }
 
   public void mainMenuShow() {
-    HashMap<Integer, String> mainMenuMap = list.getMainMenuMap();
+    ArrayList<String> mainMenus = list.getMainMenuList();
     for (int i = 1; i < 13; i++) {
-      System.out.printf("%d. %s\n", i, mainMenuMap.get(i));
+      System.out.printf("%d. %s\n", i, mainMenus.get(i - 1));
     }
     System.out.println("13. 직원호출 메뉴");
     System.out.println("14. 주문수정");
@@ -56,7 +56,7 @@ public class BBQMenuHandler {
     System.out.println("주문내역");
     System.out.println("----------------------------------------");
 
-    for (product goods : list.orderedMenuList()) {
+    for (BBQProduct goods : list.orderedMenuList()) {
       System.out.println(goods.getName() + "  수량 : " + goods.getSize() + "  주문 가격 : " + goods.totalPrice());
       sum += goods.totalPrice();
     }
@@ -79,8 +79,8 @@ public class BBQMenuHandler {
   }
 
   public void menuSelectShow(int mainMenuNum) {
-    HashMap<Integer, String> mainMenuMap = list.getMainMenuMap();
-    String menu = mainMenuMap.get(mainMenuNum);
+    ArrayList<String> mainMenus = list.getMainMenuList();
+    String menu = mainMenus.get(mainMenuNum - 1);
     while (true) {
       System.out.println("-----------------------------");
       System.out.println("        " + menu + "         ");
@@ -99,25 +99,29 @@ public class BBQMenuHandler {
 
   void detailMenuShow(int mainMenuNum) {
     String detailMenuName = setMenuName(mainMenuNum, 1);
-    for (product goods : list.selectedMenuList(detailMenuName)) {
+    for (BBQProduct goods : list.selectedMenuList(detailMenuName)) {
       int num = 1;
       System.out.printf("%d. %s - %d\n", num, goods.getName(), goods.getPrice());
     }
   }
 
   public String setMenuName(int mainMenuNum, int subMenuNum) {
-    HashMap<String, Map<Integer, String>> subMenuMap = list.getSubMenuMap();
-    HashMap<Integer, String> mainMenuMap = list.getMainMenuMap();
-    return subMenuMap.get(mainMenuMap.get(mainMenuNum)).get(subMenuNum);
+    ArrayList<BBQProduct> subMenuList = list.getSubMenuProductList(mainMenuNum);
+    for (BBQProduct obj : subMenuList) {
+      if (obj.getMenuOrder() == subMenuNum) {
+        return obj.getName();
+      }
+    }
+    return "";
   }
 
   public void editSelectedMenu() {
-    ArrayList<String> menuList = list.getMenuList();
+    ArrayList<String> menuList = new ArrayList<>();
     System.out.println("-----------------------------");
     System.out.println("현재 주문내역");
     System.out.println("-----------------------------");
     int menuNo = 0;
-    for (product goods : list.orderedMenuList()) {
+    for (BBQProduct goods : list.orderedMenuList()) {
       System.out.printf("%d. %s   수량 : %d   주문 가격 : %d\n", (menuList.size() + 1), goods.getName(), goods.getSize(),
           goods.totalPrice());
       menuNo++;
@@ -137,9 +141,9 @@ public class BBQMenuHandler {
       System.out.println("\n\n");
       stopping(1500);
     }
-    ArrayList<product> productList = list.getProductList();
+    ArrayList<BBQProduct> productList = list.getProductList();
     for (int i = 0; i < productList.size(); i++) {
-      product goods = productList.get(i);
+      BBQProduct goods = productList.get(i);
       if (menuList.get(No - 1).equals(goods.getName()) && goods.getSize() > 0) {
         while (true) {
           input = this.prompt.inputString("해당 메뉴 주문을 취소하시려면 0, 수량 재설정을 원하시면 주문하실 수량를 입력해주세요\n> ");

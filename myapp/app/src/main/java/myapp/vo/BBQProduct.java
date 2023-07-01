@@ -1,18 +1,22 @@
 package myapp.vo;
 
-public class product {
-  String name;
-  String menuCategory;
-  int size;
-  int price;
+public class BBQProduct {
+  private String name;
+  private String menuCategory;
+  private int menuOrder = 1;
+  private int size;
+  private int price;
+
   // int firstCost; // 원가 추후 회계처리를위해 구현예정
   // boolean isEvent = flase // 이벤트기간인지 확인 , 이벤트시 변경되는 메뉴 저장할 별도의 클래스 필요
 
-  public product(String str, int num, int menuPrice, String menu) {
+  public BBQProduct(String str, int num, int menuPrice, String menu, int menuOrder) {
     this.name = str;
     this.size = num;
     this.price = menuPrice;
     this.menuCategory = menu;
+    this.menuOrder = menuOrder;
+
     // this.isEvent = false;
   }
 
@@ -22,6 +26,10 @@ public class product {
 
   public int getPrice() {
     return this.price;
+  }
+
+  public int getMenuOrder() {
+    return this.menuOrder;
   }
 
   public void init() {
