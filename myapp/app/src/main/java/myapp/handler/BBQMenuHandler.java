@@ -89,6 +89,13 @@ public class BBQMenuHandler {
       input = this.prompt.inputString(">");
       subMenuNum = Integer.parseInt(input.replaceAll("[^0-9]", ""));
       String menuName = setMenuName(mainMenuNum, subMenuNum);
+      System.out.println(menuName);
+      if (subMenuNum == 0) {
+        System.out.println("메인메뉴로 돌아갑니다.");
+        System.out.println("\n\n");
+        stopping(1500);
+        break;
+      }
       if (putInShoppingCart(menuName)) {
         break;
       } else {
@@ -98,10 +105,9 @@ public class BBQMenuHandler {
   }
 
   void detailMenuShow(int mainMenuNum) {
-    String detailMenuName = setMenuName(mainMenuNum, 1);
-    for (BBQProduct goods : list.selectedMenuList(detailMenuName)) {
-      int num = 1;
-      System.out.printf("%d. %s - %d\n", num, goods.getName(), goods.getPrice());
+    // String detailMenuName = setMenuName(mainMenuNum, 1);
+    for (BBQProduct goods : list.getSubMenuProductList(mainMenuNum)) {
+      System.out.printf("%d. %s - %d\n", goods.getMenuOrder(), goods.getName(), goods.getPrice());
     }
   }
 
@@ -121,12 +127,14 @@ public class BBQMenuHandler {
     System.out.println("현재 주문내역");
     System.out.println("-----------------------------");
     int menuNo = 0;
-    for (BBQProduct goods : list.orderedMenuList()) {
+    BBQProduct[] orderedMenuList = list.orderedMenuList();
+    for (BBQProduct goods : orderedMenuList) {
       System.out.printf("%d. %s   수량 : %d   주문 가격 : %d\n", (menuList.size() + 1), goods.getName(), goods.getSize(),
           goods.totalPrice());
       menuNo++;
       menuList.add(goods.getName());
     }
+
     if (menuNo == 0) {
       System.out.println("현재 주문내역이 없습니다. 메인화면으로 이동합니다");
       System.out.println("\n\n");
@@ -134,18 +142,26 @@ public class BBQMenuHandler {
       return;
     }
     System.out.println("\n\n");
-    System.out.println("수정할 메뉴 번호를 입력해주세요");
+    System.out.println("수정할 메뉴 번호를 입력해주세요 (나가기 - 99)");
     int No = Integer.parseInt(this.prompt.inputString("> "));
-    if (No == 0) {
+    if (No == 99) {
+      System.out.println("메인메뉴로 돌아갑니다.");
+      System.out.println("\n\n");
+      stopping(1500);
+      return;
+    }
+    if (No == 0 || No > orderedMenuList.length) {
       System.out.println("잘못입력하셧습니다. 메인메뉴로 돌아갑니다.");
       System.out.println("\n\n");
       stopping(1500);
+      return;
     }
     ArrayList<BBQProduct> productList = list.getProductList();
     for (int i = 0; i < productList.size(); i++) {
       BBQProduct goods = productList.get(i);
       if (menuList.get(No - 1).equals(goods.getName()) && goods.getSize() > 0) {
         while (true) {
+
           input = this.prompt.inputString("해당 메뉴 주문을 취소하시려면 0, 수량 재설정을 원하시면 주문하실 수량를 입력해주세요\n> ");
           if (input == input.replaceAll("[^0-9]", "") && Integer.parseInt(input) >= 0) {
             goods.setSize(Integer.parseInt(input));

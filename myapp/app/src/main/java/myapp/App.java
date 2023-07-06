@@ -4,28 +4,40 @@
 package myapp;
 
 import myapp.util.Prompt;
+import java.util.Collection;
 import myapp.handler.BBQMenuHandler;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+// import java.util.ArrayList;
+// import java.util.LinkedList;
+// import java.util.List;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+
 import myapp.vo.BBQProduct;
 import myapp.handler.BBQMenuList;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 
 public class App {
 
-  BBQMenuList list = new BBQMenuList();
+  BBQMenuList list;
 
   public App() {
     // prepareMenu();
   }
 
   public static void main(String[] args) {
-    // loadData();
     new App().execute();
-    // saveData();
   }
 
   public void execute() {
+    // loadCSV("menu.csv");
+    loadJson("menu.json");
+    // list.initMainMenuList();
     Prompt prompt = new Prompt();
     BBQMenuHandler menuHandler = new BBQMenuHandler(prompt, list);
 
@@ -50,14 +62,65 @@ public class App {
       }
 
     }
+    saveData("menu.json");
   }
 
-  private void loadData() {
+  // private void loadCSV(String filename) {
+  // try {
+  // FileReader in0 = new FileReader(filename);
+  // BufferedReader in = new BufferedReader(in0);
+
+  // String line = null;
+  // while ((line = in.readLine()) != null) {
+  // list.addMenuData(BBQProduct.fromCsvString(line, ","));
+  // }
+  // in.close();
+  // // System.out.println("size : " + list.getProductList().size());
+  // list.initMainMenuList();
+
+  // } catch (Exception e) {
+  // System.out.println(filename + " 파일을 읽는 중 오류 발생!");
+  // }
+
+  // }
+
+  private void loadJson(String filename) {
+    try {
+      FileReader in0 = new FileReader(filename);
+      BufferedReader in = new BufferedReader(in0);
+
+      StringBuilder strBuilder = new StringBuilder();
+
+      String line = null;
+      while ((line = in.readLine()) != null) {
+        strBuilder.append(line);
+      }
+      Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
+      list = gson.fromJson(strBuilder.toString(),
+          TypeToken.getParameterized(BBQMenuList.class).getType());
+
+      System.out.println(list.getProductList().size());
+      in.close();
+
+    } catch (Exception e) {
+      System.out.println(filename + " 파일을 읽는중 오류 발생");
+
+    }
 
   }
 
-  private void saveData() {
+  private void saveData(String fileName) {
+    try {
+      FileWriter out0 = new FileWriter(fileName);
+      BufferedWriter out = new BufferedWriter(out0);
 
+      Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").setPrettyPrinting().create();
+      out.write(gson.toJson(list));
+      out.close();
+
+    } catch (Exception e) {
+      System.out.println("회원 정보를 저장하는 중 오류 발생!");
+    }
   }
 
   static void printTitle() {

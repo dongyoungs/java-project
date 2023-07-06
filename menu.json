@@ -1,0 +1,893 @@
+{
+  "productList": [
+    {
+      "name": "황금올리브치킨",
+      "menuCategory": "후라이드",
+      "menuOrder": 1,
+      "size": 0,
+      "price": 20000
+    },
+    {
+      "name": "황금올리브치킨(순살)",
+      "menuCategory": "후라이드",
+      "menuOrder": 2,
+      "size": 0,
+      "price": 22000
+    },
+    {
+      "name": "황금올리브치킨™(닭다리)",
+      "menuCategory": "후라이드",
+      "menuOrder": 3,
+      "size": 0,
+      "price": 22000
+    },
+    {
+      "name": "황금올리브치킨™속안심",
+      "menuCategory": "후라이드",
+      "menuOrder": 4,
+      "size": 0,
+      "price": 22000
+    },
+    {
+      "name": "황금올리브치킨™핫윙",
+      "menuCategory": "후라이드",
+      "menuOrder": 5,
+      "size": 0,
+      "price": 20000
+    },
+    {
+      "name": "황금올리브치킨™핫윙(냉장)",
+      "menuCategory": "후라이드",
+      "menuOrder": 6,
+      "size": 0,
+      "price": 23000
+    },
+    {
+      "name": "핫황금올리브치킨™",
+      "menuCategory": "후라이드",
+      "menuOrder": 7,
+      "size": 0,
+      "price": 21000
+    },
+    {
+      "name": "크런치 순살크래커",
+      "menuCategory": "후라이드",
+      "menuOrder": 8,
+      "size": 0,
+      "price": 20000
+    },
+    {
+      "name": "파더s치킨(와사비)",
+      "menuCategory": "후라이드",
+      "menuOrder": 9,
+      "size": 0,
+      "price": 15000
+    },
+    {
+      "name": "파더s치킨(로스트 갈릭)",
+      "menuCategory": "후라이드",
+      "menuOrder": 10,
+      "size": 0,
+      "price": 15000
+    },
+    {
+      "name": "황올 반+양념 반",
+      "menuCategory": "반반",
+      "menuOrder": 1,
+      "size": 0,
+      "price": 21000
+    },
+    {
+      "name": "황올 반+양념 반(순살)",
+      "menuCategory": "반반",
+      "menuOrder": 2,
+      "size": 0,
+      "price": 23000
+    },
+    {
+      "name": "황올 반+양념 반(닭다리)",
+      "menuCategory": "반반",
+      "menuOrder": 3,
+      "size": 0,
+      "price": 22000
+    },
+    {
+      "name": "황올 반+매운양념 반",
+      "menuCategory": "반반",
+      "menuOrder": 4,
+      "size": 0,
+      "price": 21500
+    },
+    {
+      "name": "황금올리브치킨™ 속안심반반",
+      "menuCategory": "반반",
+      "menuOrder": 5,
+      "size": 0,
+      "price": 20000
+    },
+    {
+      "name": "크런치 순살크래커 반반",
+      "menuCategory": "반반",
+      "menuOrder": 6,
+      "size": 0,
+      "price": 21000
+    },
+    {
+      "name": "황올 반+크리스피 반",
+      "menuCategory": "반반",
+      "menuOrder": 7,
+      "size": 0,
+      "price": 21000
+    },
+    {
+      "name": "황올 반+블랙페퍼 반",
+      "menuCategory": "반반",
+      "menuOrder": 8,
+      "size": 0,
+      "price": 21000
+    },
+    {
+      "name": "황올 반+레드착착 반",
+      "menuCategory": "반반",
+      "menuOrder": 9,
+      "size": 0,
+      "price": 21000
+    },
+    {
+      "name": "크리스피 반+블랙페퍼 반",
+      "menuCategory": "반반",
+      "menuOrder": 10,
+      "size": 0,
+      "price": 21000
+    },
+    {
+      "name": "블랙페퍼 반+레드착착 반",
+      "menuCategory": "반반",
+      "menuOrder": 11,
+      "size": 0,
+      "price": 21000
+    },
+    {
+      "name": "크리스피 반+레드착착 반",
+      "menuCategory": "반반",
+      "menuOrder": 12,
+      "size": 0,
+      "price": 21000
+    },
+    {
+      "name": "황금올리브치킨 블랙페퍼",
+      "menuCategory": "시즈닝",
+      "menuOrder": 1,
+      "size": 0,
+      "price": 21000
+    },
+    {
+      "name": "황금올리브치킨™ 레드착착",
+      "menuCategory": "시즈닝",
+      "menuOrder": 2,
+      "size": 0,
+      "price": 21000
+    },
+    {
+      "name": "황금올리브치킨™ 크런치 버터",
+      "menuCategory": "시즈닝",
+      "menuOrder": 3,
+      "size": 0,
+      "price": 24000
+    },
+    {
+      "name": "자메이카 소떡만나치킨",
+      "menuCategory": "양념",
+      "menuOrder": 1,
+      "size": 0,
+      "price": 24000
+    },
+    {
+      "name": "자메이카 소떡만나치킨(콤보)",
+      "menuCategory": "양념",
+      "menuOrder": 2,
+      "size": 0,
+      "price": 25500
+    },
+    {
+      "name": "자메이카 소떡만나치킨(순살)",
+      "menuCategory": "양념",
+      "menuOrder": 3,
+      "size": 0,
+      "price": 24000
+    },
+    {
+      "name": "오리지날 양념치킨",
+      "menuCategory": "양념",
+      "menuOrder": 4,
+      "size": 0,
+      "price": 21500
+    },
+    {
+      "name": "오리지날 양념치킨(순살)",
+      "menuCategory": "양념",
+      "menuOrder": 5,
+      "size": 0,
+      "price": 23500
+    },
+    {
+      "name": "매운양념치킨",
+      "menuCategory": "양념",
+      "menuOrder": 6,
+      "size": 0,
+      "price": 22000
+    },
+    {
+      "name": "황올한 깐풍치킨",
+      "menuCategory": "양념",
+      "menuOrder": 7,
+      "size": 0,
+      "price": 22000
+    },
+    {
+      "name": "황올한 깐풍치킨(순살)",
+      "menuCategory": "양념",
+      "menuOrder": 8,
+      "size": 0,
+      "price": 23000
+    },
+    {
+      "name": "극한왕갈비치킨",
+      "menuCategory": "양념",
+      "menuOrder": 9,
+      "size": 0,
+      "price": 23000
+    },
+    {
+      "name": "소이갈릭스",
+      "menuCategory": "양념",
+      "menuOrder": 10,
+      "size": 0,
+      "price": 21000
+    },
+    {
+      "name": "소이갈릭스(윙\u0026봉)",
+      "menuCategory": "양념",
+      "menuOrder": 11,
+      "size": 0,
+      "price": 21000
+    },
+    {
+      "name": "자메이카 통다리구이",
+      "menuCategory": "구이",
+      "menuOrder": 1,
+      "size": 0,
+      "price": 21500
+    },
+    {
+      "name": "스모크치킨",
+      "menuCategory": "구이",
+      "menuOrder": 2,
+      "size": 0,
+      "price": 18000
+    },
+    {
+      "name": "매달구",
+      "menuCategory": "구이",
+      "menuOrder": 3,
+      "size": 0,
+      "price": 21500
+    },
+    {
+      "name": "황금올리브치킨 콤보",
+      "menuCategory": "황올 콤보시리즈",
+      "menuOrder": 1,
+      "size": 0,
+      "price": 24000
+    },
+    {
+      "name": "황금올리브치킨™ 크런치 버터(콤보)",
+      "menuCategory": "황올 콤보시리즈",
+      "menuOrder": 2,
+      "size": 0,
+      "price": 25000
+    },
+    {
+      "name": "황올 반+양념 반(콤보)",
+      "menuCategory": "황올 콤보시리즈",
+      "menuOrder": 3,
+      "size": 0,
+      "price": 25000
+    },
+    {
+      "name": "오리지날 양념치킨(콤보)",
+      "menuCategory": "황올 콤보시리즈",
+      "menuOrder": 4,
+      "size": 0,
+      "price": 25500
+    },
+    {
+      "name": "황금올리브치킨™ 핫크리스피(콤보)",
+      "menuCategory": "황올 콤보시리즈",
+      "menuOrder": 5,
+      "size": 0,
+      "price": 25000
+    },
+    {
+      "name": "황금올리브치킨™ 블랙페퍼(콤보)",
+      "menuCategory": "황올 콤보시리즈",
+      "menuOrder": 6,
+      "size": 0,
+      "price": 25000
+    },
+    {
+      "name": "황금올리브치킨™ 레드착착(콤보)",
+      "menuCategory": "황올 콤보시리즈",
+      "menuOrder": 7,
+      "size": 0,
+      "price": 25000
+    },
+    {
+      "name": "TOP3세트메뉴 Set1",
+      "menuCategory": "세트메뉴",
+      "menuOrder": 1,
+      "size": 0,
+      "price": 26000
+    },
+    {
+      "name": "TOP3세트메뉴 Set2",
+      "menuCategory": "세트메뉴",
+      "menuOrder": 2,
+      "size": 0,
+      "price": 27000
+    },
+    {
+      "name": "TOP3세트메뉴 Set3",
+      "menuCategory": "세트메뉴",
+      "menuOrder": 3,
+      "size": 0,
+      "price": 27000
+    },
+    {
+      "name": "황올 반마리세트",
+      "menuCategory": "세트메뉴",
+      "menuOrder": 4,
+      "size": 0,
+      "price": 16500
+    },
+    {
+      "name": "양념 반마리세트",
+      "menuCategory": "세트메뉴",
+      "menuOrder": 5,
+      "size": 0,
+      "price": 17500
+    },
+    {
+      "name": "자메이카 반마리세트",
+      "menuCategory": "세트메뉴",
+      "menuOrder": 6,
+      "size": 0,
+      "price": 17500
+    },
+    {
+      "name": "황금올리브치킨 반마리",
+      "menuCategory": "1인분 메뉴",
+      "menuOrder": 1,
+      "size": 0,
+      "price": 11000
+    },
+    {
+      "name": "황금올리브치킨™(닭다리) 반마리",
+      "menuCategory": "1인분 메뉴",
+      "menuOrder": 2,
+      "size": 0,
+      "price": 11500
+    },
+    {
+      "name": "핫황금올리브치킨™ 크리스피 반마리",
+      "menuCategory": "1인분 메뉴",
+      "menuOrder": 3,
+      "size": 0,
+      "price": 11500
+    },
+    {
+      "name": "황금올리브치킨™ 블랙페퍼 반마리",
+      "menuCategory": "1인분 메뉴",
+      "menuOrder": 4,
+      "size": 0,
+      "price": 11500
+    },
+    {
+      "name": "황금올리브치킨™ 레드착착 반마리",
+      "menuCategory": "1인분 메뉴",
+      "menuOrder": 5,
+      "size": 0,
+      "price": 11500
+    },
+    {
+      "name": "오리지날 양념치킨 반마리",
+      "menuCategory": "1인분 메뉴",
+      "menuOrder": 6,
+      "size": 0,
+      "price": 12000
+    },
+    {
+      "name": "매운양념치킨 반마리",
+      "menuCategory": "1인분 메뉴",
+      "menuOrder": 7,
+      "size": 0,
+      "price": 12000
+    },
+    {
+      "name": "황올한 깐풍치킨 반마리",
+      "menuCategory": "1인분 메뉴",
+      "menuOrder": 8,
+      "size": 0,
+      "price": 12000
+    },
+    {
+      "name": "황올한 깐풍치킨(순살) 반마리",
+      "menuCategory": "1인분 메뉴",
+      "menuOrder": 9,
+      "size": 0,
+      "price": 13000
+    },
+    {
+      "name": "자메이카 통다리구이 반마리",
+      "menuCategory": "1인분 메뉴",
+      "menuOrder": 10,
+      "size": 0,
+      "price": 12000
+    },
+    {
+      "name": "스모크치킨 반마리",
+      "menuCategory": "1인분 메뉴",
+      "menuOrder": 11,
+      "size": 0,
+      "price": 10000
+    },
+    {
+      "name": "BBQ 치킨버거(마일드)",
+      "menuCategory": "피자/버거",
+      "menuOrder": 1,
+      "size": 0,
+      "price": 5000
+    },
+    {
+      "name": "BBQ 치킨버거(스파이시)",
+      "menuCategory": "피자/버거",
+      "menuOrder": 2,
+      "size": 0,
+      "price": 5000
+    },
+    {
+      "name": "페퍼로니 시카고피자 R",
+      "menuCategory": "피자/버거",
+      "menuOrder": 3,
+      "size": 0,
+      "price": 11000
+    },
+    {
+      "name": "페퍼로니 시카고피자 L",
+      "menuCategory": "피자/버거",
+      "menuOrder": 4,
+      "size": 0,
+      "price": 16000
+    },
+    {
+      "name": "허니리코타 시카고피자 R",
+      "menuCategory": "피자/버거",
+      "menuOrder": 5,
+      "size": 0,
+      "price": 11000
+    },
+    {
+      "name": "허니리코타 시카고피자 L",
+      "menuCategory": "피자/버거",
+      "menuOrder": 6,
+      "size": 0,
+      "price": 16000
+    },
+    {
+      "name": "황올한팝콘 카라멜맛",
+      "menuCategory": "사이드메뉴",
+      "menuOrder": 1,
+      "size": 0,
+      "price": 1800
+    },
+    {
+      "name": "크런치 올치팝",
+      "menuCategory": "사이드메뉴",
+      "menuOrder": 2,
+      "size": 0,
+      "price": 8000
+    },
+    {
+      "name": "롱치즈스틱(1개)",
+      "menuCategory": "사이드메뉴",
+      "menuOrder": 3,
+      "size": 0,
+      "price": 3500
+    },
+    {
+      "name": "치즐링 칩스",
+      "menuCategory": "사이드메뉴",
+      "menuOrder": 4,
+      "size": 0,
+      "price": 4000
+    },
+    {
+      "name": "애플치즈볼(5개)",
+      "menuCategory": "사이드메뉴",
+      "menuOrder": 5,
+      "size": 0,
+      "price": 6500
+    },
+    {
+      "name": "리얼초코볼(5개)",
+      "menuCategory": "사이드메뉴",
+      "menuOrder": 6,
+      "size": 0,
+      "price": 6000
+    },
+    {
+      "name": "BBQ 모둠볼(6개)",
+      "menuCategory": "사이드메뉴",
+      "menuOrder": 7,
+      "size": 0,
+      "price": 6000
+    },
+    {
+      "name": "BBQ 모둠볼(10개)",
+      "menuCategory": "사이드메뉴",
+      "menuOrder": 8,
+      "size": 0,
+      "price": 9000
+    },
+    {
+      "name": "황금알치즈볼(5개)",
+      "menuCategory": "사이드메뉴",
+      "menuOrder": 9,
+      "size": 0,
+      "price": 5000
+    },
+    {
+      "name": "크림치즈볼(5개)",
+      "menuCategory": "사이드메뉴",
+      "menuOrder": 10,
+      "size": 0,
+      "price": 5000
+    },
+    {
+      "name": "크림치즈볼(5개) (치즈맛 시즈닝)",
+      "menuCategory": "사이드메뉴",
+      "menuOrder": 11,
+      "size": 0,
+      "price": 5500
+    },
+    {
+      "name": "더블치즈볼(5개)",
+      "menuCategory": "사이드메뉴",
+      "menuOrder": 12,
+      "size": 0,
+      "price": 5000
+    },
+    {
+      "name": "오감볼",
+      "menuCategory": "사이드메뉴",
+      "menuOrder": 13,
+      "size": 0,
+      "price": 7000
+    },
+    {
+      "name": "통새우 멘보샤(5개)",
+      "menuCategory": "사이드메뉴",
+      "menuOrder": 14,
+      "size": 0,
+      "price": 6000
+    },
+    {
+      "name": "새우스틱(2개)",
+      "menuCategory": "사이드메뉴",
+      "menuOrder": 15,
+      "size": 0,
+      "price": 4000
+    },
+    {
+      "name": "BBQ 닭껍데기",
+      "menuCategory": "사이드메뉴",
+      "menuOrder": 16,
+      "size": 0,
+      "price": 3500
+    },
+    {
+      "name": "오징어튀김(3개)",
+      "menuCategory": "사이드메뉴",
+      "menuOrder": 17,
+      "size": 0,
+      "price": 3000
+    },
+    {
+      "name": "모둠감자튀김",
+      "menuCategory": "사이드메뉴",
+      "menuOrder": 18,
+      "size": 0,
+      "price": 11000
+    },
+    {
+      "name": "BBQ 소떡(자소만맛)",
+      "menuCategory": "사이드메뉴",
+      "menuOrder": 19,
+      "size": 0,
+      "price": 3000
+    },
+    {
+      "name": "BBQ 소떡(왕갈비맛)",
+      "menuCategory": "사이드메뉴",
+      "menuOrder": 20,
+      "size": 0,
+      "price": 3000
+    },
+    {
+      "name": "BBQ 소떡(치즈맛)",
+      "menuCategory": "사이드메뉴",
+      "menuOrder": 21,
+      "size": 0,
+      "price": 3000
+    },
+    {
+      "name": "케이준감자",
+      "menuCategory": "사이드메뉴",
+      "menuOrder": 22,
+      "size": 0,
+      "price": 4000
+    },
+    {
+      "name": "황올한 닭발튀김",
+      "menuCategory": "사이드메뉴",
+      "menuOrder": 23,
+      "size": 0,
+      "price": 7900
+    },
+    {
+      "name": "유자폰스소스",
+      "menuCategory": "소스류",
+      "menuOrder": 1,
+      "size": 0,
+      "price": 1500
+    },
+    {
+      "name": "자메이카 소떡만나 소스",
+      "menuCategory": "소스류",
+      "menuOrder": 2,
+      "size": 0,
+      "price": 700
+    },
+    {
+      "name": "시크릿 양념소스",
+      "menuCategory": "소스류",
+      "menuOrder": 3,
+      "size": 0,
+      "price": 500
+    },
+    {
+      "name": "비비소스",
+      "menuCategory": "소스류",
+      "menuOrder": 4,
+      "size": 0,
+      "price": 500
+    },
+    {
+      "name": "케소 딥핑소스(75g)",
+      "menuCategory": "소스류",
+      "menuOrder": 5,
+      "size": 0,
+      "price": 2000
+    },
+    {
+      "name": "파인마요소스(75g)",
+      "menuCategory": "소스류",
+      "menuOrder": 6,
+      "size": 0,
+      "price": 2000
+    },
+    {
+      "name": "매직칠리소스(75g)",
+      "menuCategory": "소스류",
+      "menuOrder": 7,
+      "size": 0,
+      "price": 2000
+    },
+    {
+      "name": "치즈갈릭소스(75g)",
+      "menuCategory": "소스류",
+      "menuOrder": 8,
+      "size": 0,
+      "price": 2000
+    },
+    {
+      "name": "스모크 소스",
+      "menuCategory": "소스류",
+      "menuOrder": 9,
+      "size": 0,
+      "price": 500
+    },
+    {
+      "name": "순살크래커 소스",
+      "menuCategory": "소스류",
+      "menuOrder": 10,
+      "size": 0,
+      "price": 500
+    },
+    {
+      "name": "볼케이노 핫소스(150g)",
+      "menuCategory": "소스류",
+      "menuOrder": 11,
+      "size": 0,
+      "price": 2000
+    },
+    {
+      "name": "극한왕갈비치킨 소스(120g)",
+      "menuCategory": "소스류",
+      "menuOrder": 12,
+      "size": 0,
+      "price": 2000
+    },
+    {
+      "name": "블랙페퍼 시즈닝",
+      "menuCategory": "소스류",
+      "menuOrder": 13,
+      "size": 0,
+      "price": 1000
+    },
+    {
+      "name": "레드착착 시즈닝",
+      "menuCategory": "소스류",
+      "menuOrder": 14,
+      "size": 0,
+      "price": 1000
+    },
+    {
+      "name": "치즈맛 시즈닝",
+      "menuCategory": "소스류",
+      "menuOrder": 15,
+      "size": 0,
+      "price": 1000
+    },
+    {
+      "name": "스파클링 레몬보이 245ml",
+      "menuCategory": "음류/주류",
+      "menuOrder": 1,
+      "size": 0,
+      "price": 1000
+    },
+    {
+      "name": "스파클링 레몬보이 350ml",
+      "menuCategory": "음류/주류",
+      "menuOrder": 2,
+      "size": 0,
+      "price": 1500
+    },
+    {
+      "name": "스파클링 레몬보이 500ml",
+      "menuCategory": "음류/주류",
+      "menuOrder": 3,
+      "size": 0,
+      "price": 2000
+    },
+    {
+      "name": "제로콜라 1.25L",
+      "menuCategory": "음류/주류",
+      "menuOrder": 4,
+      "size": 0,
+      "price": 2500
+    },
+    {
+      "name": "콜라 500ml",
+      "menuCategory": "음류/주류",
+      "menuOrder": 5,
+      "size": 0,
+      "price": 2000
+    },
+    {
+      "name": "콜라 1.25L",
+      "menuCategory": "음류/주류",
+      "menuOrder": 6,
+      "size": 0,
+      "price": 2500
+    },
+    {
+      "name": "스프라이트 500ml",
+      "menuCategory": "음류/주류",
+      "menuOrder": 7,
+      "size": 0,
+      "price": 2000
+    },
+    {
+      "name": "스프라이트 1.5L",
+      "menuCategory": "음류/주류",
+      "menuOrder": 8,
+      "size": 0,
+      "price": 2500
+    },
+    {
+      "name": "페일에일 (500cc)",
+      "menuCategory": "음류/주류",
+      "menuOrder": 9,
+      "size": 0,
+      "price": 5000
+    },
+    {
+      "name": "인디아 페일에일 (500cc)",
+      "menuCategory": "음류/주류",
+      "menuOrder": 10,
+      "size": 0,
+      "price": 5000
+    },
+    {
+      "name": "바이젠 (500cc)",
+      "menuCategory": "음류/주류",
+      "menuOrder": 11,
+      "size": 0,
+      "price": 4500
+    },
+    {
+      "name": "둔켈 (500cc)",
+      "menuCategory": "음류/주류",
+      "menuOrder": 12,
+      "size": 0,
+      "price": 4500
+    },
+    {
+      "name": "헬레스 (500cc)",
+      "menuCategory": "음류/주류",
+      "menuOrder": 13,
+      "size": 0,
+      "price": 4500
+    },
+    {
+      "name": "필스너 (500cc)",
+      "menuCategory": "음류/주류",
+      "menuOrder": 14,
+      "size": 0,
+      "price": 4500
+    },
+    {
+      "name": "생맥주 500cc",
+      "menuCategory": "음류/주류",
+      "menuOrder": 15,
+      "size": 0,
+      "price": 4500
+    },
+    {
+      "name": "생맥주 1000cc",
+      "menuCategory": "음류/주류",
+      "menuOrder": 16,
+      "size": 0,
+      "price": 7000
+    },
+    {
+      "name": "병맥주",
+      "menuCategory": "음류/주류",
+      "menuOrder": 17,
+      "size": 0,
+      "price": 4000
+    },
+    {
+      "name": "소주",
+      "menuCategory": "음류/주류",
+      "menuOrder": 18,
+      "size": 0,
+      "price": 4000
+    }
+  ],
+  "mainMenuList": [
+    "후라이드",
+    "반반",
+    "시즈닝",
+    "양념",
+    "구이",
+    "황올 콤보시리즈",
+    "세트메뉴",
+    "1인분 메뉴",
+    "피자/버거",
+    "사이드메뉴",
+    "소스류",
+    "음류/주류"
+  ]
+}

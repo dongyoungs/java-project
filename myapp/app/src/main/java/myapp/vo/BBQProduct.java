@@ -56,4 +56,21 @@ public class BBQProduct {
     size = a;
   }
 
+  public static BBQProduct fromCsvString(String str, String format) {
+    String[] values = str.split(format);
+    // System.out.println("메뉴이름 :" + values[0] +
+    // " 갯수 : " + values[1] +
+    // " 가격 : " + values[2] +
+    // " 메뉴 카테고리 : " + values[3] +
+    // " 하위번호 : " + values[4]);
+    BBQProduct product = new BBQProduct(
+        values[0], // 메뉴 이름
+        Integer.parseInt(values[1]), // 갯수 (0개)
+        Integer.parseInt(values[2]), // 가격
+        values[3], // 메뉴 카테고리
+        Integer.parseInt(values[4]) // 카테고리 하위 번호
+    );
+    return product;
+  }
+
 }
