@@ -16,6 +16,10 @@ public class MySQLBoardDao implements BoardDao{
 
   @Override
   public void insert(Board board) {
+    System.out.println(board.getCategory());
+    System.out.println(board.getContent());
+    System.out.println(board.getTitle());
+    System.out.println(board.getWriter().getNo());
     SqlSession sqlSession = sqlSessionFactory.openSession(false);
     sqlSession.insert("myapp.dao.BoardDao.insert", board);
 

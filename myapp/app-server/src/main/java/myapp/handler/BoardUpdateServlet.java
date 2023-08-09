@@ -19,14 +19,14 @@ public class BoardUpdateServlet extends HttpServlet {
   public void doPost(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 
-    Member loginUser = (Member) request.getSession().getAttribute("loginUser");
+    String emailKey = (String)request.getSession().getAttribute(request.getSession().getId());
+    Member loginUser = (Member) request.getSession().getAttribute(emailKey);
     if (loginUser == null) {
-      response.sendRedirect("/auth/form.html");
+      response.sendRedirect("/auth/form");
       return;
     }
 
 
-    request.setCharacterEncoding("UTF-8");
     int category = Integer.parseInt(request.getParameter("category"));
     Board board = new Board();
     board.setNo(Integer.parseInt(request.getParameter("no")));

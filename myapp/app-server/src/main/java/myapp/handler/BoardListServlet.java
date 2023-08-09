@@ -42,6 +42,7 @@ public class BoardListServlet extends HttpServlet {
     out.println("</thead>");
 
     List<Board> list = InitServlet.boardDao.findAll(category);
+    System.out.println(list.size());
 
     out.println("<tbody>");
     for (Board board : list) {

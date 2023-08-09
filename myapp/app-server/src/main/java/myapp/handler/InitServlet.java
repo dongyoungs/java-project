@@ -2,11 +2,13 @@ package myapp.handler;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
 import javax.servlet.GenericServlet;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpSession;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
@@ -22,6 +24,7 @@ public class InitServlet extends GenericServlet {
   public static SqlSessionFactory sqlSessionFactory;
   public static BoardDao boardDao;
   public static MemberDao memberDao;
+  public static HashMap<String,HttpSession> sessionMap;
 
   private static final long serialVersionUID= 1L;
   @Override
@@ -34,6 +37,7 @@ public class InitServlet extends GenericServlet {
               Resources.getResourceAsStream("myapp/config/mybatis-config.xml")));
       boardDao = new MySQLBoardDao(sqlSessionFactory);
       memberDao = new MySQLMemberDao(sqlSessionFactory);
+      sessionMap = new HashMap<>();
 
     } catch (Exception e) {
       System.out.println("InitServlet.init() 실행 중 오류 발생!");

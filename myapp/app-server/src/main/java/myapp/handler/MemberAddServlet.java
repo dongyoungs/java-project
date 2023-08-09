@@ -19,10 +19,10 @@ public class MemberAddServlet extends HttpServlet{
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
 
 
-    request.setCharacterEncoding("UTF-8");
-    Member loginUser = (Member)request.getSession().getAttribute("loginUser");
+    String emailKey = (String)request.getSession().getAttribute(request.getSession().getId());
+    Member loginUser = (Member) request.getSession().getAttribute(emailKey);
     if (loginUser == null) {
-      response.sendRedirect("/auth/form.html");
+      response.sendRedirect("/auth/form");
       return;
     }
     Member m = new Member();

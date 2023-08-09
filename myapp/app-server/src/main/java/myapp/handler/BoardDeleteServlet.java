@@ -20,16 +20,17 @@ public class BoardDeleteServlet extends HttpServlet {
   public void service(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 
-    Member loginUser = (Member) request.getSession().getAttribute("loginUser");
+    String emailKey = (String)request.getSession().getAttribute(request.getSession().getId());
+    Member loginUser = (Member) request.getSession().getAttribute(emailKey);
     if (loginUser == null) {
-      response.sendRedirect("/auth/form.html");
+      response.sendRedirect("/auth/form");
       return;
     }
 
     int category = Integer.parseInt(request.getParameter("category"));
     Board b = new Board();
     b.setNo(Integer.parseInt(request.getParameter("no")));
-    b.setWriter((Member) request.getSession().getAttribute("loginUser"));
+    b.setWriter(loginUser);
     b.setCategory(category);
 
     try {
@@ -43,7 +44,6 @@ public class BoardDeleteServlet extends HttpServlet {
 
     } catch (Exception e) {
       InitServlet.sqlSessionFactory.openSession(false).rollback();
-      throw new RuntimeException();
     }
 
 

@@ -21,6 +21,7 @@ public class Member implements Serializable {
   private String password;
   private char gender;
   private Timestamp createdDate;
+  private String sessionId;
 
   //  public Member() {
   //    this.no = userId++;
@@ -97,6 +98,14 @@ public class Member implements Serializable {
 
   public void setCreatedDate(Timestamp createdDate) {
     this.createdDate = createdDate;
+  }
+
+  public String getSessionId() {
+    return sessionId;
+  }
+
+  public void setSessionId(String sessionId) {
+    this.sessionId = sessionId;
   }
 
 
